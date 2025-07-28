@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Student List</title></head>
+<body>
+    <h2>Student List</h2>
+    <a th:href="@{/showNewStudentForm}">Add New Student</a>
+    <table border="1">
+        <tr><th>Name</th><th>Email</th><th>Course</th><th>Actions</th></tr>
+        <tr th:each="student : ${listStudents}">
+            <td th:text="${student.name}">Name</td>
+            <td th:text="${student.email}">Email</td>
+            <td th:text="${student.course}">Course</td>
+            <td>
+                <a th:href="@{/showFormForUpdate/{id}(id=${student.id})}">Edit</a>
+                <a th:href="@{/deleteStudent/{id}(id=${student.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
