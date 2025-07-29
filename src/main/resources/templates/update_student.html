@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Update Student</title></head>
+<head>
+    <title>Update Student</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
 <body>
     <h2>Update Student</h2>
     <form th:action="@{/saveStudent}" th:object="${student}" method="post">
